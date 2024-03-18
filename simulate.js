@@ -183,13 +183,13 @@ async function initialSetup() {
     const audiolistener = new THREE.AudioListener();
     camera.add(audiolistener);
     const audioLoader = new THREE.AudioLoader();
-    audioLoader.load("./assets/simulationVoice.ogg", function (obj) {
+    audioLoader.load("/simulationVoice.ogg", function (obj) {
       const sound = new THREE.Audio(audiolistener);
       sound.setBuffer(obj);
       sound.setLoop(true);
       sound.setVolume(0.8);
       music = sound;
-      audioLoader.load("./assets/mirrorcomes.ogg", function (object) {
+      audioLoader.load("/mirrorcomes.ogg", function (object) {
         const sound = new THREE.Audio(audiolistener);
         sound.setBuffer(object);
         sound.setLoop(false);
@@ -231,7 +231,7 @@ function getcoordinate(event) {
 //mirror instruction
 function mirrorloader() {
   const fbx = new FBXLoader();
-  fbx.load("./Assets/magicalMirro/mirrors.fbx", function (obj) {
+  fbx.load("/magicalMirro/mirrors.fbx", function (obj) {
     console.log("objeeee mirror ", obj);
     obj.scale.set(0.1, 0.05, 0.05);
     obj.position.set(-1, 0, -17);

@@ -5,19 +5,19 @@ import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 export function models_3D(THREE, scene, objects) {
   const textureLoader = new THREE.TextureLoader();
   const texture = textureLoader.load(
-    "./assets/floorTexturing/Wood_Herringbone_Tiles_002_basecolor.jpg"
+    "/floorTexturing/Wood_Herringbone_Tiles_002_basecolor.jpg"
   );
   const texturenormal = textureLoader.load(
-    "./assets/floorTexturing/Wood_Herringbone_Tiles_002_normal.jpg"
+    "/floorTexturing/Wood_Herringbone_Tiles_002_normal.jpg"
   );
   const texturough = textureLoader.load(
-    "./assets/floorTexturing/Wood_Herringbone_Tiles_002_roughness.jpg"
+    "/floorTexturing/Wood_Herringbone_Tiles_002_roughness.jpg"
   );
   const textaoMap = textureLoader.load(
-    "./assets/floorTexturing/Wood_Herringbone_Tiles_002_ambientOcclusion.jpg"
+    "/floorTexturing/Wood_Herringbone_Tiles_002_ambientOcclusion.jpg"
   );
   const textdisplace = textureLoader.load(
-    "./assets/floorTexturing/Wood_Herringbone_Tiles_002_height.png"
+    "/floorTexturing/Wood_Herringbone_Tiles_002_height.png"
   );
 
   const planggeo = new THREE.PlaneGeometry(47.3, 40);
@@ -44,10 +44,10 @@ export function models_3D(THREE, scene, objects) {
   const obj = new OBJLoader();
 
   // wall loading with OBJ
-  mtl.load("./assets/wall/simulation.mtl", function (walls) {
+  mtl.load("/wall/simulation.mtl", function (walls) {
     walls.preload();
 
-    obj.load("./assets/wall/simulation.obj", function (object) {
+    obj.load("/wall/simulation.obj", function (object) {
       object.children[0].material.opacity = 0;
       object.children[0].material.transparent = true;
       object.children[2].material = new THREE.MeshPhongMaterial({
@@ -68,12 +68,12 @@ export function models_3D(THREE, scene, objects) {
   });
 
   // wall without window obj
-  mtl.load("./assets/justwall/wall.mtl", function (walls) {
+  mtl.load("/justwall/wall.mtl", function (walls) {
     walls.preload();
-    obj.load("./assets/justwall/wall.obj", function (object) {
-      // const texture = new THREE.TextureLoader().load('./assets/wallTexture/Wallpaper_ArtDeco_001_basecolor.jpg');
-      // const texture2 = new THREE.TextureLoader().load('./assets/brickWall/Wood_Ceiling_001_height.png');
-      // const texture3 = new THREE.TextureLoader().load('./assets/brickWall/Wood_Ceiling_001_ambientOcclusion.jpg');
+    obj.load("/justwall/wall.obj", function (object) {
+      // const texture = new THREE.TextureLoader().load('/wallTexture/Wallpaper_ArtDeco_001_basecolor.jpg');
+      // const texture2 = new THREE.TextureLoader().load('/brickWall/Wood_Ceiling_001_height.png');
+      // const texture3 = new THREE.TextureLoader().load('/brickWall/Wood_Ceiling_001_ambientOcclusion.jpg');
 
       // object.children[50].material.map = texture
       // object.children[3].material = new THREE.MeshPhongMaterial( { map: texture2 } );
@@ -95,9 +95,9 @@ export function models_3D(THREE, scene, objects) {
     obj.setMaterials(walls);
   });
 
-  mtl.load("./assets/justwall/wall.mtl", function (walls) {
+  mtl.load("/justwall/wall.mtl", function (walls) {
     walls.preload();
-    obj.load("./assets/justwall/wall.obj", function (object) {
+    obj.load("/justwall/wall.obj", function (object) {
       object.children[0].material = new THREE.MeshPhongMaterial({
         color: new THREE.Color(0x88878d),
       });
@@ -110,9 +110,9 @@ export function models_3D(THREE, scene, objects) {
     obj.setMaterials(walls);
   });
 
-  mtl.load("./assets/justwall/wall.mtl", function (walls) {
+  mtl.load("/justwall/wall.mtl", function (walls) {
     walls.preload();
-    obj.load("./assets/justwall/wall.obj", function (object) {
+    obj.load("/justwall/wall.obj", function (object) {
       // const gui = new dat.GUI()
       //     const gui = new dat.GUI()
       //     var val = {
@@ -143,9 +143,9 @@ export function models_3D(THREE, scene, objects) {
   });
 
   //bed o fbx
-  fbx.load("./assets/bed/Bed-Only.fbx", function (object) {
-    const blanket = textureLoader.load("./assets/bed/bedsheet.jpg");
-    const mainsheet = textureLoader.load("./assets/bed/mainsheet.jpg");
+  fbx.load("/bed/Bed-Only.fbx", function (object) {
+    const blanket = textureLoader.load("/bed/bedsheet.jpg");
+    const mainsheet = textureLoader.load("/bed/mainsheet.jpg");
 
     object.position.set(15, -2.5, 0);
     object.rotation.set(-0.4, -1.5, 0);
@@ -159,32 +159,24 @@ export function models_3D(THREE, scene, objects) {
 
   // tv furniture obj
   const tfurniture = new MTLLoader();
-  tfurniture.load(
-    "./assets/tfurniture/10256_TV_Cabinet_v1_max2011.mtl",
-    (mtl) => {
-      mtl.preload();
-      const texture = textureLoader.load(
-        "./assets/tfurniture/whiteTexture.png"
-      );
+  tfurniture.load("/tfurniture/10256_TV_Cabinet_v1_max2011.mtl", (mtl) => {
+    mtl.preload();
+    const texture = textureLoader.load("/tfurniture/whiteTexture.png");
 
-      obj.load(
-        "./assets/tfurniture/10256_TV_Cabinet_v1_max2011.obj",
-        function (obj) {
-          obj.children[0].material.map = texture;
-          obj.rotation.set(-2, 0, 1.57);
-          obj.position.set(-19.5, -4.3, 2);
-          obj.scale.set(0.09, 0.09, 0.09);
-          scene.add(obj);
-          objects.tvStand = obj;
-        }
-      );
-      obj.setMaterials(mtl);
-    }
-  );
+    obj.load("/tfurniture/10256_TV_Cabinet_v1_max2011.obj", function (obj) {
+      obj.children[0].material.map = texture;
+      obj.rotation.set(-2, 0, 1.57);
+      obj.position.set(-19.5, -4.3, 2);
+      obj.scale.set(0.09, 0.09, 0.09);
+      scene.add(obj);
+      objects.tvStand = obj;
+    });
+    obj.setMaterials(mtl);
+  });
 
   // tv itself fbx
-  fbx.load("./assets/tv/uploads_files_37044_TV.FBX", function (object) {
-    const texture = textureLoader.load("./assets/tv/Screen1.jpg");
+  fbx.load("/tv/uploads_files_37044_TV.FBX", function (object) {
+    const texture = textureLoader.load("/tv/Screen1.jpg");
     object.children[0].material[2] = new THREE.MeshPhongMaterial({
       name: "Screen",
       emissive: new THREE.Color("white"),
@@ -198,9 +190,9 @@ export function models_3D(THREE, scene, objects) {
   });
 
   // floor lamp fbx
-  fbx.load("./assets/tableLight/floorlamp001.FBX", function (object) {
-    const texture = textureLoader.load("./assets/tableLight/holder.jpg");
-    const cyn = textureLoader.load("./assets/tableLight/lightpass.jpg");
+  fbx.load("/tableLight/floorlamp001.FBX", function (object) {
+    const texture = textureLoader.load("/tableLight/holder.jpg");
+    const cyn = textureLoader.load("/tableLight/lightpass.jpg");
 
     const pointlight = new THREE.PointLight(0xf8fc0f, 0.3, 30);
     pointlight.position.set(-18, 0, -21.5);
@@ -234,8 +226,8 @@ export function models_3D(THREE, scene, objects) {
   });
 
   // drawer fbx
-  fbx.load("./assets/drawer/drawerforBooks.fbx", function (object) {
-    const texture = textureLoader.load("./assets/drawer/redtexture.jpeg");
+  fbx.load("/drawer/drawerforBooks.fbx", function (object) {
+    const texture = textureLoader.load("/drawer/redtexture.jpeg");
 
     object.position.set(10, -11, -13.5);
     object.rotation.set(-0.5, 0, 0);
@@ -248,10 +240,10 @@ export function models_3D(THREE, scene, objects) {
   });
 
   //pots fbx
-  fbx.load("./assets/pots/pot.fbx", function (object) {
-    const texture = textureLoader.load("./assets/pots/pot.jpg"),
-      texture1 = textureLoader.load("./assets/pots/potsColor.jpg"),
-      texture2 = textureLoader.load("./assets/pots/soil.jpg");
+  fbx.load("/pots/pot.fbx", function (object) {
+    const texture = textureLoader.load("/pots/pot.jpg"),
+      texture1 = textureLoader.load("/pots/potsColor.jpg"),
+      texture2 = textureLoader.load("/pots/soil.jpg");
 
     object.position.set(16, -6.4, -19);
     object.rotation.set(-0.5, 0.5, 0);
@@ -269,9 +261,9 @@ export function models_3D(THREE, scene, objects) {
   });
 
   //books
-  mtl.load("./assets/books/simulation.mtl", function (mtl) {
+  mtl.load("/books/simulation.mtl", function (mtl) {
     mtl.preload();
-    obj.load("./assets/books/simulation.obj", function (object) {
+    obj.load("/books/simulation.obj", function (object) {
       object.rotation.set(-0.5, -1.6, 0);
       object.position.set(15.5, -8, -16.5);
       object.scale.set(0.009, 0.007, 0.008);
@@ -282,9 +274,9 @@ export function models_3D(THREE, scene, objects) {
   });
 
   //books
-  mtl.load("./assets/books/simulation.mtl", function (mtl) {
+  mtl.load("/books/simulation.mtl", function (mtl) {
     mtl.preload();
-    obj.load("./assets/books/simulation.obj", function (object) {
+    obj.load("/books/simulation.obj", function (object) {
       object.position.set(13.5, -4.5, -20);
       object.rotation.set(1.1, 0, 1.55);
       object.scale.set(0.009, 0.009, 0.009);
@@ -295,7 +287,7 @@ export function models_3D(THREE, scene, objects) {
   });
 
   // couch
-  //   fbx.load("./assets/sofa/sofa.fbx", function (obj) {
+  //   fbx.load("/sofa/sofa.fbx", function (obj) {
   //     obj.position.set(-1, -4.3, 2);
   //     obj.rotation.set(-0.43, -1.55, 0);
   //     obj.scale.set(0.05, 0.08, 0.05);
@@ -309,11 +301,11 @@ export function models_3D(THREE, scene, objects) {
   //https://yourusername.github.io/repositoryname/branchname/path/to/image.jpg
   //https://ananddudi.github.io/earth-three/earthtexture.jpg
 
-  mtl.load("./Assets/mirror/simulation.mtl", function (mtl) {
+  mtl.load("/mirror/simulation.mtl", function (mtl) {
     mtl.preload();
-    obj.load("./Assets/mirror/simulation.obj", function (object) {
+    obj.load("/mirror/simulation.obj", function (object) {
       const texture = textureLoader.load(
-        "./Assets/mirror/colorTexture&opacityTexture.jpg"
+        "/mirror/colorTexture&opacityTexture.jpg"
       );
       object.children = object.children.map((val) => {
         if (val.material.name.includes("Gold")) {
@@ -333,9 +325,9 @@ export function models_3D(THREE, scene, objects) {
   });
 
   // roof
-  mtl.load("./assets/roof/simulation.mtl", function (roof) {
+  mtl.load("/roof/simulation.mtl", function (roof) {
     roof.preload();
-    obj.load("./assets/roof/simulation.obj", function (object) {
+    obj.load("/roof/simulation.obj", function (object) {
       object.position.set(-11.5, -24.6, -14);
       object.rotation.set(1.14, 0.01, -0.001);
       object.scale.set(0.27, 0.206, 0.21);
@@ -350,7 +342,7 @@ export function models_3D(THREE, scene, objects) {
   });
 
   // // // fan
-  // fbx.load("./assets/fan/fan.fbx", function (obj) {
+  // fbx.load("/fan/fan.fbx", function (obj) {
   //   obj.position.set(0, 14, 0);
   //   obj.rotation.set(-0.4, 0, 0);
   //   obj.scale.set(0.08, 0.03, 0.05);
@@ -363,9 +355,9 @@ export function models_3D(THREE, scene, objects) {
 
   // // laptop load with FBX
   // fbx.load('assets/Dell_Laptop_FBX/Dell_Laptop.fbx',function(object){
-  //     const keyboard = textureLoader.load('./assets/Dell_Laptop_FBX/keyboard_txt.jpg');
-  //     const body = textureLoader.load('./assets/Dell_Laptop_FBX/body_txt.jpg');
-  //     const display = textureLoader.load('./assets/Dell_Laptop_FBX/display_txt.jpg');
+  //     const keyboard = textureLoader.load('/Dell_Laptop_FBX/keyboard_txt.jpg');
+  //     const body = textureLoader.load('/Dell_Laptop_FBX/body_txt.jpg');
+  //     const display = textureLoader.load('/Dell_Laptop_FBX/display_txt.jpg');
 
   //     object.children[3].material = new THREE.MeshBasicMaterial({map:keyboard});
   //     object.children[1].material = new THREE.MeshBasicMaterial({map:body});
@@ -386,7 +378,7 @@ export function models_3D(THREE, scene, objects) {
   //because of my 2gb cpu and no gpu laptop's limitation i couldn't make it :(
 
   // const character = new GLTFLoader()
-  // character.load('./assets/maleCharacter/gltf/rp_nathan_animated_003_walking.gltf',function(man){
+  // character.load('/maleCharacter/gltf/rp_nathan_animated_003_walking.gltf',function(man){
   //     console.log(man.o)
   //     o.add(man.o)
   // })

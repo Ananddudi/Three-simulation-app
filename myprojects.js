@@ -9,97 +9,94 @@ export function my_Projects(OBJLoader, MTLLoader, THREE, scene) {
   //wireframe
   const obj = new OBJLoader();
   const mtl = new MTLLoader();
-  mtl.load("./assets/wireframeLink/wireframe/simulation.mtl", function (mlt) {
+  mtl.load("/wireframeLink/wireframe/simulation.mtl", function (mlt) {
     mlt.preload();
-    obj.load(
-      "./assets/wireframeLink/wireframe/simulation.obj",
-      function (objs) {
-        // Yeah there is possibility of loop here as well but i think it will increase
-        // the load on cpu or gpu
-        //react django project
-        var remesh = randomtask(
-          "wireobj",
-          objs,
-          "react",
-          "darkblue",
-          "reactDjango"
-        );
-        reactD = remesh;
-        remesh[1].position.set(0, -5, -30);
+    obj.load("/wireframeLink/wireframe/simulation.obj", function (objs) {
+      // Yeah there is possibility of loop here as well but i think it will increase
+      // the load on cpu or gpu
+      //react django project
+      var remesh = randomtask(
+        "wireobj",
+        objs,
+        "react",
+        "darkblue",
+        "reactDjango"
+      );
+      reactD = remesh;
+      remesh[1].position.set(0, -5, -30);
 
-        // Here is some code that i write for solving shape issue until i find
-        //clipping plane functionality ;)
+      // Here is some code that i write for solving shape issue until i find
+      //clipping plane functionality ;)
 
-        // const vertices = new Float32Array( [
-        //     -5.0, 5.0,  0.0,   //123 ---
-        //      5.0, 5.0,  0.0,
-        //     -5.0,  -5.0,  0.0,
-        //      5.0,  -5.0,  0.0,
-        //    -5.0,  -5.0,  0.0,
-        //      5.0,  -5.0,  0.0,
-        //      5.0,  -5.0,  0.0,
-        //     -9.0,  -9.0,  0.0,
-        //      5.0,  -5.0,  0.0,
-        // ] );
+      // const vertices = new Float32Array( [
+      //     -5.0, 5.0,  0.0,   //123 ---
+      //      5.0, 5.0,  0.0,
+      //     -5.0,  -5.0,  0.0,
+      //      5.0,  -5.0,  0.0,
+      //    -5.0,  -5.0,  0.0,
+      //      5.0,  -5.0,  0.0,
+      //      5.0,  -5.0,  0.0,
+      //     -9.0,  -9.0,  0.0,
+      //      5.0,  -5.0,  0.0,
+      // ] );
 
-        // geometry1.setAttribute("position",new THREE.BufferAttribute(vertices,3))
-        // // attributes.position.array
-        // const shapeIs = new THREE.Shape()
-        // shapeIs.moveTo(0,0)
-        // shapeIs.lineTo(10,10)
-        // shapeIs.lineTo(10,-4)
-        // shapeIs.lineTo(3,-10)
-        // shapeIs.lineTo(-10,-10)
-        // console.log(geometry1)
-        // console.log(geometry)
-        // var uvAttribute = geometry.attributes.uv;
+      // geometry1.setAttribute("position",new THREE.BufferAttribute(vertices,3))
+      // // attributes.position.array
+      // const shapeIs = new THREE.Shape()
+      // shapeIs.moveTo(0,0)
+      // shapeIs.lineTo(10,10)
+      // shapeIs.lineTo(10,-4)
+      // shapeIs.lineTo(3,-10)
+      // shapeIs.lineTo(-10,-10)
+      // console.log(geometry1)
+      // console.log(geometry)
+      // var uvAttribute = geometry.attributes.uv;
 
-        //i went this much depth
-        // for ( var i = 0; i < uvAttribute.count; i ++ ) {
+      //i went this much depth
+      // for ( var i = 0; i < uvAttribute.count; i ++ ) {
 
-        //     var u = uvAttribute.getX( i );
-        //    var v = uvAttribute.getY
-        //     u = u + 0.2
-        //     v = v + 0.2
+      //     var u = uvAttribute.getX( i );
+      //    var v = uvAttribute.getY
+      //     u = u + 0.2
+      //     v = v + 0.2
 
-        //     // write values back to attribute
+      //     // write values back to attribute
 
-        //     uvAttribute.setXY( i, u, v );
+      //     uvAttribute.setXY( i, u, v );
 
-        // }
+      // }
 
-        // python's QT framework called PyQt project
-        var [qtplane, qtmesh] = randomtask("qtobj", objs, "qt", "teal", "qt");
-        qtproject = qtmesh;
-        qtplane.translate(new THREE.Vector3(9.8, 0, 0));
-        qtmesh.position.set(15, 0, -30);
+      // python's QT framework called PyQt project
+      var [qtplane, qtmesh] = randomtask("qtobj", objs, "qt", "teal", "qt");
+      qtproject = qtmesh;
+      qtplane.translate(new THREE.Vector3(9.8, 0, 0));
+      qtmesh.position.set(15, 0, -30);
 
-        // //calculator with just little extra functionality
-        var [calplane, calmesh] = randomtask(
-          "calobj",
-          objs,
-          "calc",
-          "tomato",
-          "calculator"
-        );
-        calproject = calmesh;
-        calP = calplane;
-        calplane.translate(new THREE.Vector3(-15.5, 0, 0));
-        calmesh.position.set(-15, 0, -30);
+      // //calculator with just little extra functionality
+      var [calplane, calmesh] = randomtask(
+        "calobj",
+        objs,
+        "calc",
+        "tomato",
+        "calculator"
+      );
+      calproject = calmesh;
+      calP = calplane;
+      calplane.translate(new THREE.Vector3(-15.5, 0, 0));
+      calmesh.position.set(-15, 0, -30);
 
-        //Well i should not showed up this one because it was just testing to get first in three.js world but
-        //four component align very well with each other i added it
-        var [earthplane, earthmesh] = randomtask(
-          "earthobj",
-          objs,
-          "earth",
-          "green",
-          "earthobj"
-        );
-        earthproject = earthmesh;
-        earthmesh.position.set(0, 7, -30);
-      }
-    );
+      //Well i should not showed up this one because it was just testing to get first in three.js world but
+      //four component align very well with each other i added it
+      var [earthplane, earthmesh] = randomtask(
+        "earthobj",
+        objs,
+        "earth",
+        "green",
+        "earthobj"
+      );
+      earthproject = earthmesh;
+      earthmesh.position.set(0, 7, -30);
+    });
   });
 
   //writing same task for all 3 components i thought why dont make a function which take care of all these
