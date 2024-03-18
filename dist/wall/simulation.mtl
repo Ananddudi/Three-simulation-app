@@ -1,0 +1,12 @@
+newmtl Box material_ee95bf4f-80d8-47e2-abd4-8a543cc865aa
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd colorTexture&opacityTexture.jpg
+newmtl Wood Editable 1_fe19d150-26ba-40fb-9465-c86bb6860993
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd wood_Wood_009_Color_1.jpg
+newmtl Wood Editable_8fa3031a-b205-41bb-b094-57d7a4b255dc
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd Wood_001_Color_3.jpg
