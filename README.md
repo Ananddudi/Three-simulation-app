@@ -13,6 +13,6 @@ Notice Books.
 <a href="https://dudisimulationapp.netlify.app/"><b>Application Link</b></a><br/><a href="https://drive.google.com/file/d/15pl547moiAd13vn7FIVso5-eZnP5TJNl/view?usp=sharing"><b>Application video</b></a><h6><em> OPEN ONLY ON LAPTOP OR DESKTOP! NOT COMPETIBLE WITH PHONES</em></h6>
 
 <h3>Mirror and Books textures</h3>
-<pre><img src="./mirror.png"> 
+<pre> 
 <img src="books.png"></pre>
 <img src="Book.jpg"></pre>
