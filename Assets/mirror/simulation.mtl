@@ -1,0 +1,7 @@
+newmtl Gold - Satin_de97e6e6-7622-427a-b393-dcd852373d9b
+Kd 0.992 0.816 0.090
+d 1.000
+newmtl Material 3_c20fc082-637b-4a46-b0df-ee1ccedc5ba1
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd colorTexture&opacityTexture.jpg

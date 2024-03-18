@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Anand dudi" />
+    <meta name="description" content="portfolio" />
+    <title id="titletag">Simulation</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+
+  <body class="bg-black top-0 left-0 h-screen w-screen">
+    <div class="waiting" id="waiting">
+      <h1><span>Please wait</span></h1>
+      <span class="dot1">.</span>
+      <span class="dot2">.</span>
+      <span class="dot3">.</span>
+    </div>
+
+    <div
+      id="infoback"
+      class="left-0 top-0 z-0 absolute h-screen w-screen bg-black opacity-30"
+    ></div>
+    <div
+      id="info"
+      class="absolute left-1/2 top-1/4 -mt-20 -ml-80 text-white z-10"
+    >
+      <h1 class="text-3xl font-GoogleFont text-red-800">
+        Welcome to the
+        <em class="italic text-orange-500 font-FrijoleFont">SIMULATION</em>
+      </h1>
+      <div class="mx-56 my-3 w-40 px-3 py-1 text-center">Go Into Mirror</div>
+      <button
+        id="button"
+        class="mx-56 -my-3 drop-shadow-2xl absolute font-semibold w-40 border-2 border-solid border-white px-3 py-1 rounded-xl"
+      >
+        <div class="">Enable Sound</div>
+      </button>
+    </div>
+
+    <video
+      id="react"
+      style="display: none"
+      width="300"
+      height="300"
+      class="absolute"
+      crossorigin="anonymous"
+      loading="lazy"
+      playsinline
+      webkit-playsinline
+      autoplay
+      loop
+      muted
+    >
+      <source
+        src="https://dl.dropboxusercontent.com/scl/fi/xm9afk0o0cpyz5ppec5rw/myapps.mp4?rlkey=ub19g6dibhvs256r7lpyathhe&dl=1"
+        type="video/mp4"
+        codecs="avc1.42E01E, mp4a.40.2"
+      />
+    </video>
+    <video
+      id="qt"
+      style="display: none"
+      width="300"
+      height="300"
+      loading="lazy"
+      class="absolute"
+      crossorigin="anonymous"
+      playsinline
+      webkit-playsinline
+      autoplay
+      loop
+      muted
+    >
+      <source
+        src="https://dl.dropboxusercontent.com/scl/fi/lp66bdvoea1yptjkzeapn/PyQt.mp4?rlkey=km9wt13b16plsgvznnkbc8al5&dl=1"
+        type="video/mp4"
+        codecs="avc1.42E01E, mp4a.40.2"
+      />
+    </video>
+    <video
+      id="calc"
+      style="display: none"
+      width="300"
+      height="300"
+      loading="lazy"
+      class="absolute"
+      crossorigin="anonymous"
+      playsinline
+      webkit-playsinline
+      autoplay
+      loop
+      muted
+    >
+      <source
+        src="https://dl.dropboxusercontent.com/scl/fi/ky2uzdvrq4ikkp0wqaqg7/calculator.mp4?rlkey=sr02wyxoawpymoxtii806c2j0&dl=1"
+        type="video/mp4"
+        codecs="avc1.42E01E, mp4a.40.2"
+      />
+    </video>
+    <video
+      id="earth"
+      style="display: none"
+      width="300"
+      loading="lazy"
+      height="300"
+      class="absolute"
+      playsinline
+      crossorigin="anonymous"
+      webkit-playsinline
+      autoplay
+      loop
+      muted
+    >
+      <source
+        src="https://dl.dropboxusercontent.com/scl/fi/apn6nvozmmzz3e9w2qzsx/earth3ree.mp4?rlkey=hlq2hn7k9suj5971i4o40mavc&dl=1"
+        type="video/mp4"
+        codecs="avc1.42E01E, mp4a.40.2"
+      />
+    </video>
+
+    <script type="module" src="./handlinghtml.js"></script>
+    <script type="module" src="./simulate.js"></script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Coustard&family=Eater&family=Frijole&family=Gwendolyn&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.grad {
+  background: linear-gradient(to right, cyan, blue, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.waiting {
+  position: fixed;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  background: #191a1a;
+  text-align: center;
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+}
+
+.waiting h1 {
+  margin: 0;
+  padding: 0;
+  font-family: ‘Arial Narrow’, sans-serif;
+  font-weight: 100;
+  font-size: 1.1em;
+  color: #a3e1f0;
+}
+
+.waiting span {
+  display: block;
+  font-size: 1.5rem;
+  padding-left: 7px;
+  color: aliceblue;
+}
+
+.waiting .dot1 {
+  opacity: 0;
+  animation: tt 1s ease-in-out 250ms infinite;
+}
+.waiting .dot2 {
+  opacity: 0;
+  animation: tt 1s ease-in-out 400ms infinite;
+}
+.waiting .dot3 {
+  opacity: 0;
+  animation: tt 1s ease-in-out 600ms infinite;
+}
+
+@keyframes tt {
+  100% {
+    opacity: 1;
+  }
+}
