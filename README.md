@@ -10,7 +10,7 @@ keyboard's UP,LEFT,RIGHT do rotation forward, left, right respectively.<br/>Taki
 Notice Books.
 <br/> 
 <br/> 
-<a href="https://dudisimulationapp.netlify.app/"><b>Application Link</b></a><br/><a href="https://drive.google.com/file/d/15pl547moiAd13vn7FIVso5-eZnP5TJNl/view?usp=sharing"><b>Application video</b></a><h6><em> OPEN ONLY ON LAPTOP OR DESKTOP! NOT COMPETIBLE WITH PHONES</em></h6>
+<a href="https://three-simulation-app.vercel.app/"><b>Application Link</b></a><br/><a href="https://drive.google.com/file/d/15pl547moiAd13vn7FIVso5-eZnP5TJNl/view?usp=sharing"><b>Application video</b></a><h6><em> OPEN ONLY ON LAPTOP OR DESKTOP! NOT COMPETIBLE WITH PHONES</em></h6>
 
 <h3>Mirror and Books textures</h3>
 <pre> 
